@@ -14,7 +14,7 @@ about:
   icon: https://www.google.com/s2/favicons?domain=truenas.com&sz=64
 source:
   project: https://github.com/ryanphan94/truenas-local-mcp
-  commit: REPLACE_WITH_GIT_COMMIT_SHA
+  commit: 7ceb9e08a90a170bac362b5462ed74fd32aca28e
 config:
   description: Configure the connection to your TrueNAS host.
   secrets:
