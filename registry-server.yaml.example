@@ -1,0 +1,44 @@
+name: truenas-local
+image: mcp/truenas-local
+type: server
+meta:
+  category: storage
+  tags:
+    - truenas
+    - nas
+    - storage
+    - homelab
+about:
+  title: TrueNAS Local MCP
+  description: Read-only by default MCP server for TrueNAS over WebSocket JSON-RPC.
+  icon: https://www.google.com/s2/favicons?domain=truenas.com&sz=64
+source:
+  project: https://github.com/ryanphan94/truenas-local-mcp
+  commit: REPLACE_WITH_GIT_COMMIT_SHA
+config:
+  description: Configure the connection to your TrueNAS host.
+  secrets:
+    - name: truenas-local.api_key
+      env: TRUENAS_API_KEY
+      example: YOUR_TRUENAS_API_KEY
+  env:
+    - name: TRUENAS_URL
+      example: https://truenas.local
+      value: "{{truenas-local.url}}"
+    - name: TRUENAS_TLS_INSECURE
+      example: "1"
+      value: "{{truenas-local.tls_insecure}}"
+  parameters:
+    type: object
+    properties:
+      url:
+        type: string
+        title: TrueNAS URL
+        description: Base HTTPS URL for the TrueNAS UI.
+      tls_insecure:
+        type: string
+        title: Skip TLS verification
+        description: Set to 1 only if your TrueNAS certificate is self-signed or mismatched.
+        default: "1"
+    required:
+      - url
