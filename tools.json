@@ -1,0 +1,129 @@
+[
+  {
+    "name": "system_info",
+    "description": "Return basic system information for the connected TrueNAS host.",
+    "arguments": []
+  },
+  {
+    "name": "alert_list",
+    "description": "List current alerts from the TrueNAS system.",
+    "arguments": []
+  },
+  {
+    "name": "pool_query",
+    "description": "Query storage pools.",
+    "arguments": [
+      {
+        "name": "filters",
+        "type": "array",
+        "desc": "TrueNAS query filters array."
+      },
+      {
+        "name": "options",
+        "type": "object",
+        "desc": "TrueNAS query options object."
+      }
+    ]
+  },
+  {
+    "name": "dataset_query",
+    "description": "Query datasets.",
+    "arguments": [
+      {
+        "name": "filters",
+        "type": "array",
+        "desc": "TrueNAS query filters array."
+      },
+      {
+        "name": "options",
+        "type": "object",
+        "desc": "TrueNAS query options object."
+      }
+    ]
+  },
+  {
+    "name": "disk_query",
+    "description": "Query disks.",
+    "arguments": [
+      {
+        "name": "filters",
+        "type": "array",
+        "desc": "TrueNAS query filters array."
+      },
+      {
+        "name": "options",
+        "type": "object",
+        "desc": "TrueNAS query options object."
+      }
+    ]
+  },
+  {
+    "name": "app_query",
+    "description": "Query installed apps.",
+    "arguments": [
+      {
+        "name": "filters",
+        "type": "array",
+        "desc": "TrueNAS query filters array."
+      },
+      {
+        "name": "options",
+        "type": "object",
+        "desc": "TrueNAS query options object."
+      }
+    ]
+  },
+  {
+    "name": "replication_query",
+    "description": "Query replication tasks.",
+    "arguments": [
+      {
+        "name": "filters",
+        "type": "array",
+        "desc": "TrueNAS query filters array."
+      },
+      {
+        "name": "options",
+        "type": "object",
+        "desc": "TrueNAS query options object."
+      }
+    ]
+  },
+  {
+    "name": "snapshot_query",
+    "description": "Query snapshots.",
+    "arguments": [
+      {
+        "name": "filters",
+        "type": "array",
+        "desc": "TrueNAS query filters array."
+      },
+      {
+        "name": "options",
+        "type": "object",
+        "desc": "TrueNAS query options object."
+      }
+    ]
+  },
+  {
+    "name": "truenas_call",
+    "description": "Call an arbitrary TrueNAS JSON-RPC method. Mutating methods are blocked unless writes are explicitly enabled.",
+    "arguments": [
+      {
+        "name": "method",
+        "type": "string",
+        "desc": "TrueNAS JSON-RPC method name, for example pool.query."
+      },
+      {
+        "name": "params",
+        "type": "array",
+        "desc": "JSON-RPC params array."
+      },
+      {
+        "name": "allowMutations",
+        "type": "boolean",
+        "desc": "Set true only if writes were intentionally enabled."
+      }
+    ]
+  }
+]
